@@ -1,0 +1,199 @@
+/**
+ * ARpón - Estilos del componente MonsterImage
+ * 
+ * Estilos optimizados para rendimiento con:
+ * - GPU acceleration (transform, opacity)
+ * - Containment (contain, layout)
+ * - Smooth transitions
+ */
+
+/* Container principal */
+.monster-image-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  contain: layout style;
+}
+
+/* Placeholder */
+.monster-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.monster-placeholder.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Imagen principal */
+.monster-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.monster-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Tooltip */
+.monster-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  
+  background-color: var(--color-primary, #0D1B2A);
+  color: var(--color-background, #F8F9FA);
+  padding: 12px 16px;
+  border-radius: 8px;
+  min-width: 200px;
+  max-width: 280px;
+  
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  animation: tooltipFadeIn 0.2s ease forwards;
+}
+
+/* Flecha del tooltip */
+.monster-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-primary, #0D1B2A);
+}
+
+.monster-tooltip strong {
+  display: block;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.monster-tooltip .monster-type {
+  display: inline-block;
+  background-color: var(--color-accent, #2EC4B6);
+  color: var(--color-primary, #0D1B2A);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.monster-tooltip p {
+  margin: 0;
+  color: var(--color-surface, #E6EBEB);
+}
+
+/* Animación de tooltip */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Variantes de tamaño */
+.monster-image-container.xs {
+  width: 32px;
+  height: 32px;
+}
+
+.monster-image-container.sm {
+  width: 64px;
+  height: 64px;
+}
+
+.monster-image-container.md {
+  width: 128px;
+  height: 128px;
+}
+
+.monster-image-container.lg {
+  width: 256px;
+  height: 256px;
+}
+
+.monster-image-container.xl {
+  width: 512px;
+  height: 512px;
+}
+
+/* Estado de carga */
+.monster-image-container.loading .monster-placeholder {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
+.monster-image-container:hover .monster-image.loaded {
+  transform: scale(1.05);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .monster-image,
+  .monster-placeholder,
+  .monster-tooltip {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .monster-tooltip {
+    background-color: var(--color-background, #F8F9FA);
+    color: var(--color-primary, #0D1B2A);
+  }
+  
+  .monster-tooltip::after {
+    border-top-color: var(--color-background, #F8F9FA);
+  }
+  
+  .monster-tooltip .monster-type {
+    background-color: var(--color-accent, #2EC4B6);
+    color: var(--color-primary, #0D1B2A);
+  }
+  
+  .monster-tooltip p {
+    color: var(--color-secondary, #1B263B);
+  }
+}
