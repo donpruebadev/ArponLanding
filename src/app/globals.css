@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Akrobat:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ═══════════════════════════════════════════════════════
    ARpón — Design System Tokens
@@ -40,7 +39,7 @@
   --color-arpon-border-light: rgba(0, 0, 0, 0.08);
 
   /* ─── Typography ─── */
-  --font-akrobat: 'Akrobat', system-ui, sans-serif;
+  --font-akrobat: 'Akrobat', 'Space Grotesk', system-ui, sans-serif;
   --font-space: 'Space Grotesk', system-ui, sans-serif;
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
