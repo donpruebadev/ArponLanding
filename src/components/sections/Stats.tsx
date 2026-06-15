@@ -36,10 +36,10 @@ const STATS = [
 
 export function Stats() {
   return (
-    <section className="py-24 bg-arpon-deep" id="estadisticas">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-32 bg-arpon-surface-1" id="estadisticas">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-20">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -47,7 +47,7 @@ export function Stats() {
             IMPACTO
           </span>
           <h2
-            className="mt-4 text-3xl md:text-4xl tracking-tight text-arpon-text-primary"
+            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight"
             style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
           >
             Números que hablan
@@ -55,7 +55,7 @@ export function Stats() {
         </div>
 
         {/* Stats grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -67,11 +67,11 @@ export function Stats() {
                 delay: i * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="p-6 rounded-[12px] border border-arpon-border bg-arpon-surface-1"
+              className="p-8 rounded-[12px] border border-arpon-border bg-arpon-deep"
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-5">
                 <stat.icon
-                  size={20}
+                  size={22}
                   weight="duotone"
                   className="text-arpon-teal"
                 />

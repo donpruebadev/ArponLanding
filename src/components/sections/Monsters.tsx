@@ -99,10 +99,10 @@ const MONSTERS = [
 
 export function Monsters() {
   return (
-    <section className="py-24 bg-arpon-surface-0" id="monstruos">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-32 bg-arpon-surface-0" id="monstruos">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-20">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -110,19 +110,19 @@ export function Monsters() {
             LOS MONSTRUOS
           </span>
           <h2
-            className="mt-4 text-3xl md:text-4xl tracking-tight text-arpon-text-primary"
+            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight"
             style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
           >
             Cada irregularidad tiene nombre
           </h2>
-          <p className="mt-4 text-arpon-text-secondary leading-relaxed max-w-[55ch]">
+          <p className="mt-5 text-lg text-arpon-text-secondary leading-relaxed max-w-[55ch]">
             Nuestro sistema clasifica las anomalías en contratación pública como
             monstruos. Identificarlos es el primer paso para acabar con ellos.
           </p>
         </div>
 
         {/* Monster grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {MONSTERS.map((monster, i) => (
             <motion.div
               key={monster.id}
@@ -134,9 +134,9 @@ export function Monsters() {
                 delay: i * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group relative p-6 rounded-[12px] border border-arpon-border bg-arpon-surface-1 hover:border-arpon-teal/20 transition-all duration-300"
+              className="group relative p-8 rounded-[12px] border border-arpon-border bg-arpon-surface-1 hover:border-arpon-teal/20 transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-5">
                 {/* Monster icon */}
                 <div
                   className="w-16 h-16 flex-shrink-0"
@@ -148,7 +148,7 @@ export function Monsters() {
                 {/* Info */}
                 <div className="min-w-0">
                   <h3
-                    className="text-base text-arpon-text-primary mb-1"
+                    className="text-lg text-arpon-text-primary mb-2"
                     style={{
                       fontFamily: "var(--font-space)",
                       fontWeight: 600,
@@ -157,7 +157,7 @@ export function Monsters() {
                     {monster.name}
                   </h3>
                   <span
-                    className="inline-block text-[10px] uppercase tracking-[0.08em] px-2 py-0.5 rounded-full mb-2"
+                    className="inline-block text-[10px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full mb-3"
                     style={{
                       fontFamily: "var(--font-mono)",
                       backgroundColor: `${monster.color}15`,

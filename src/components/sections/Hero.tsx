@@ -7,36 +7,36 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100dvh] flex items-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center overflow-hidden bg-arpon-deep"
     >
-      {/* Background gradient mesh (subtle, < 8% opacity) */}
+      {/* Background gradient mesh (subtle) */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
       >
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-arpon-teal/[0.04] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-arpon-teal/[0.03] rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-arpon-teal/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-arpon-teal/[0.04] rounded-full blur-[100px]" />
       </div>
 
-      {/* Grid lines (subtle) */}
+      {/* Grid lines (subtle, dark on light) */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
         aria-hidden="true"
       >
         <div
           className="h-full w-full"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+              linear-gradient(rgba(13,27,42,0.15) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(13,27,42,0.15) 1px, transparent 1px)
             `,
             backgroundSize: "80px 80px",
           }}
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left: Content */}
           <div className="max-w-xl">
             {/* Eyebrow */}
@@ -103,7 +103,7 @@ export function Hero() {
             >
               <a
                 href="#contratos"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-arpon-teal text-arpon-deep text-sm font-semibold rounded-[6px] hover:bg-arpon-teal-dim active:scale-[0.98] transition-all duration-150"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-arpon-teal text-white text-sm font-semibold rounded-[6px] hover:bg-arpon-teal-dim active:scale-[0.98] transition-all duration-150"
                 style={{ fontFamily: "var(--font-space)" }}
               >
                 Explorar contratos
@@ -127,7 +127,6 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative aspect-[4/3] rounded-[16px] overflow-hidden border border-arpon-border bg-arpon-surface-1">
-              {/* Animated scene placeholder */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <MonsterHuntingScene />
               </div>
@@ -148,15 +147,11 @@ function MonsterHuntingScene() {
       className="w-full h-full"
       aria-label="Arpón cazando monstruos de irregularidades en contratos públicos"
     >
-      {/* Background ocean gradient */}
+      {/* Background */}
       <defs>
         <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0D1B2A" />
-          <stop offset="100%" stopColor="#162336" />
-        </linearGradient>
-        <linearGradient id="tealGlow" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2EC4B6" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#2EC4B6" stopOpacity="0" />
+          <stop offset="0%" stopColor="#F8F9FA" />
+          <stop offset="100%" stopColor="#E6EBEB" />
         </linearGradient>
       </defs>
 
@@ -170,7 +165,7 @@ function MonsterHuntingScene() {
           y1={i * 60}
           x2="800"
           y2={i * 60}
-          stroke="rgba(255,255,255,0.03)"
+          stroke="rgba(13,27,42,0.06)"
           strokeWidth="1"
         />
       ))}
@@ -181,7 +176,7 @@ function MonsterHuntingScene() {
           y1="0"
           x2={i * 60 + 20}
           y2="600"
-          stroke="rgba(255,255,255,0.03)"
+          stroke="rgba(13,27,42,0.06)"
           strokeWidth="1"
         />
       ))}
@@ -193,9 +188,9 @@ function MonsterHuntingScene() {
       >
         <path
           d="M350 280 L450 280 L480 320 L320 320 Z"
-          fill="#1B263B"
+          fill="#E6EBEB"
           stroke="#2EC4B6"
-          strokeWidth="1"
+          strokeWidth="1.5"
         />
         {/* Mast */}
         <line
@@ -245,12 +240,10 @@ function MonsterHuntingScene() {
           delay: 0.5,
         }}
       >
-        <circle cx="580" cy="380" r="40" fill="#1B263B" stroke="#EF4444" strokeWidth="1.5" opacity="0.8" />
+        <circle cx="580" cy="380" r="40" fill="#F8F9FA" stroke="#EF4444" strokeWidth="1.5" />
         <circle cx="580" cy="380" r="28" fill="none" stroke="#EF4444" strokeWidth="0.5" opacity="0.4" />
-        {/* Eyes */}
         <circle cx="570" cy="370" r="4" fill="#EF4444" />
         <circle cx="590" cy="370" r="4" fill="#EF4444" />
-        {/* Label */}
         <text x="580" y="435" textAnchor="middle" fill="#EF4444" fontSize="10" fontFamily="monospace" letterSpacing="0.1em">
           EL INFLADO
         </text>
@@ -271,11 +264,9 @@ function MonsterHuntingScene() {
           fill="none"
           stroke="#F59E0B"
           strokeWidth="1.5"
-          opacity="0.8"
         />
         <circle cx="220" cy="385" r="3" fill="#F59E0B" />
         <circle cx="260" cy="385" r="3" fill="#F59E0B" />
-        {/* Label */}
         <text x="240" y="435" textAnchor="middle" fill="#F59E0B" fontSize="10" fontFamily="monospace" letterSpacing="0.1em">
           LA HIDRA
         </text>
@@ -291,11 +282,10 @@ function MonsterHuntingScene() {
           delay: 1.5,
         }}
       >
-        <rect x="100" y="320" width="60" height="80" rx="4" fill="#1B263B" stroke="#6B7280" strokeWidth="1" opacity="0.6" />
+        <rect x="100" y="320" width="60" height="80" rx="4" fill="#F8F9FA" stroke="#6B7280" strokeWidth="1" />
         <line x1="110" y1="340" x2="150" y2="340" stroke="#6B7280" strokeWidth="0.5" opacity="0.5" />
         <line x1="110" y1="360" x2="150" y2="360" stroke="#6B7280" strokeWidth="0.5" opacity="0.5" />
         <line x1="110" y1="380" x2="140" y2="380" stroke="#6B7280" strokeWidth="0.5" opacity="0.5" />
-        {/* Label */}
         <text x="130" y="435" textAnchor="middle" fill="#6B7280" fontSize="10" fontFamily="monospace" letterSpacing="0.1em">
           EL COLOSO
         </text>
@@ -317,16 +307,15 @@ function MonsterHuntingScene() {
         <line x1="680" y1="280" x2="700" y2="300" stroke="#EF4444" strokeWidth="0.5" opacity="0.3" />
         <line x1="680" y1="280" x2="660" y2="300" stroke="#EF4444" strokeWidth="0.5" opacity="0.3" />
         <line x1="660" y1="300" x2="700" y2="300" stroke="#EF4444" strokeWidth="0.5" opacity="0.3" />
-        {/* Label */}
         <text x="680" y="340" textAnchor="middle" fill="#EF4444" fontSize="10" fontFamily="monospace" letterSpacing="0.1em">
           LA RED
         </text>
       </motion.g>
 
       {/* Status indicators */}
-      <g opacity="0.6">
-        <rect x="30" y="20" width="120" height="24" rx="4" fill="rgba(46,196,182,0.1)" stroke="rgba(46,196,182,0.2)" strokeWidth="1" />
-        <text x="90" y="36" textAnchor="middle" fill="#2EC4B6" fontSize="10" fontFamily="monospace">
+      <g opacity="0.7">
+        <rect x="30" y="20" width="120" height="24" rx="4" fill="rgba(46,196,182,0.12)" stroke="rgba(46,196,182,0.25)" strokeWidth="1" />
+        <text x="90" y="36" textAnchor="middle" fill="#249e93" fontSize="10" fontFamily="monospace">
           ESCANEANDO...
         </text>
       </g>
@@ -337,10 +326,10 @@ function MonsterHuntingScene() {
         transition={{ duration: 2, repeat: Infinity }}
         style={{ transformOrigin: "580px 380px" }}
       >
-        <line x1="555" y1="380" x2="565" y2="380" stroke="#2EC4B6" strokeWidth="1" />
-        <line x1="595" y1="380" x2="605" y2="380" stroke="#2EC4B6" strokeWidth="1" />
-        <line x1="580" y1="355" x2="580" y2="365" stroke="#2EC4B6" strokeWidth="1" />
-        <line x1="580" y1="395" x2="580" y2="405" stroke="#2EC4B6" strokeWidth="1" />
+        <line x1="555" y1="380" x2="565" y2="380" stroke="#2EC4B6" strokeWidth="1.5" />
+        <line x1="595" y1="380" x2="605" y2="380" stroke="#2EC4B6" strokeWidth="1.5" />
+        <line x1="580" y1="355" x2="580" y2="365" stroke="#2EC4B6" strokeWidth="1.5" />
+        <line x1="580" y1="395" x2="580" y2="405" stroke="#2EC4B6" strokeWidth="1.5" />
       </motion.g>
     </svg>
   );

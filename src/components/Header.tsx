@@ -17,14 +17,14 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-arpon-deep/95 backdrop-blur-sm border-b border-arpon-border">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-2 group">
           <div className="w-8 h-8 bg-arpon-teal rounded flex items-center justify-center">
             <svg
               viewBox="0 0 24 24"
               fill="none"
-              className="w-5 h-5 text-arpon-deep"
+              className="w-5 h-5 text-white"
               aria-hidden="true"
             >
               <path
@@ -46,7 +46,7 @@ export function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}

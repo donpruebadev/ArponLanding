@@ -29,10 +29,10 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="py-24 bg-arpon-deep" id="proceso">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-32 bg-arpon-surface-1" id="proceso">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-20">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -40,7 +40,7 @@ export function Process() {
             CÓMO FUNCIONA
           </span>
           <h2
-            className="mt-4 text-3xl md:text-4xl tracking-tight text-arpon-text-primary"
+            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight"
             style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
           >
             Tres pasos para cazar anomalías
@@ -48,7 +48,7 @@ export function Process() {
         </div>
 
         {/* Steps grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           {STEPS.map((step, i) => (
             <motion.div
               key={step.number}
@@ -64,22 +64,22 @@ export function Process() {
             >
               {/* Connector line (desktop) */}
               {i < STEPS.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-px bg-arpon-border z-0" />
+                <div className="hidden md:block absolute top-14 left-full w-full h-px bg-arpon-border z-0" />
               )}
 
-              <div className="relative p-8 rounded-[12px] border border-arpon-border bg-arpon-surface-1 hover:border-arpon-teal/20 transition-colors duration-300">
+              <div className="relative p-10 rounded-[12px] border border-arpon-border bg-arpon-deep hover:border-arpon-teal/30 hover:shadow-[0_4px_16px_rgba(46,196,182,0.08)] transition-all duration-300">
                 {/* Number */}
                 <span
-                  className="data-label text-arpon-text-muted block mb-4"
+                  className="data-label text-arpon-text-muted block mb-5"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {step.number}
                 </span>
 
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-[8px] bg-arpon-teal/10 flex items-center justify-center mb-5">
+                <div className="w-14 h-14 rounded-[8px] bg-arpon-teal/10 flex items-center justify-center mb-6">
                   <step.icon
-                    size={24}
+                    size={28}
                     weight="duotone"
                     className="text-arpon-teal"
                   />
@@ -87,7 +87,7 @@ export function Process() {
 
                 {/* Content */}
                 <h3
-                  className="text-lg text-arpon-text-primary mb-3"
+                  className="text-xl text-arpon-text-primary mb-4"
                   style={{
                     fontFamily: "var(--font-space)",
                     fontWeight: 600,
@@ -95,7 +95,7 @@ export function Process() {
                 >
                   {step.title}
                 </h3>
-                <p className="text-sm text-arpon-text-secondary leading-relaxed">
+                <p className="text-base text-arpon-text-secondary leading-relaxed">
                   {step.description}
                 </p>
               </div>

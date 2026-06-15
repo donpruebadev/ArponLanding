@@ -7,25 +7,25 @@
 
 @theme inline {
   /* ─── Color Palette ─── */
-  --color-arpon-deep: #0D1B2A;
-  --color-arpon-slate: #1B263B;
+  --color-arpon-deep: #F8F9FA;
+  --color-arpon-slate: #E6EBEB;
   --color-arpon-teal: #2EC4B6;
   --color-arpon-teal-dim: #249e93;
-  --color-arpon-silver: #E6EBEB;
-  --color-arpon-offwhite: #F8F9FA;
-  --color-arpon-ink: #0A0A0A;
+  --color-arpon-silver: #1B263B;
+  --color-arpon-offwhite: #0D1B2A;
+  --color-arpon-ink: #F8F9FA;
 
-  /* ─── Surface Layers (Linear-inspired) ─── */
-  --color-arpon-surface-0: #0D1B2A;
-  --color-arpon-surface-1: #111D2E;
-  --color-arpon-surface-2: #162336;
-  --color-arpon-surface-3: #1C2A40;
+  /* ─── Surface Layers ─── */
+  --color-arpon-surface-0: #F8F9FA;
+  --color-arpon-surface-1: #FFFFFF;
+  --color-arpon-surface-2: #F1F3F5;
+  --color-arpon-surface-3: #E6EBEB;
 
   /* ─── Text ─── */
-  --color-arpon-text-primary: #F8F9FA;
-  --color-arpon-text-secondary: #9CA3AF;
+  --color-arpon-text-primary: #0D1B2A;
+  --color-arpon-text-secondary: #4A5568;
   --color-arpon-text-muted: #6B7280;
-  --color-arpon-text-dark: #0A0A0A;
+  --color-arpon-text-dark: #0D1B2A;
   --color-arpon-text-dark-secondary: #4A5568;
 
   /* ─── Semantic ─── */
@@ -35,8 +35,8 @@
   --color-arpon-info: #3B82F6;
 
   /* ─── Hairline borders ─── */
-  --color-arpon-border: rgba(255, 255, 255, 0.06);
-  --color-arpon-border-light: rgba(0, 0, 0, 0.08);
+  --color-arpon-border: rgba(0, 0, 0, 0.08);
+  --color-arpon-border-light: rgba(0, 0, 0, 0.04);
 
   /* ─── Typography ─── */
   --font-akrobat: 'Akrobat', 'Space Grotesk', system-ui, sans-serif;
@@ -120,7 +120,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-arpon-deep);
+  background: var(--color-arpon-surface-2);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -154,7 +154,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.02;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
