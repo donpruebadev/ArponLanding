@@ -5,7 +5,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 export function CTA() {
   return (
-    <section className="py-96 bg-white" id="demo">
+    <section className="py-[32rem] bg-white" id="demo">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
