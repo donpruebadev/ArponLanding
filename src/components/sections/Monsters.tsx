@@ -57,7 +57,7 @@ export function Monsters() {
   return (
     <section className="py-32 lg:py-40 bg-white" id="monstruos">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mx-auto mb-16 text-center">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -90,8 +90,8 @@ export function Monsters() {
               }}
               className="group relative p-8 rounded-[12px] border border-arpon-border bg-arpon-surface-1 hover:border-arpon-teal/20 transition-all duration-300"
             >
-              <div className="flex items-start gap-5">
-                <div className="w-20 h-20 flex-shrink-0 rounded-[8px] bg-arpon-surface-2 p-1.5 flex items-center justify-center overflow-hidden">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-[8px] bg-arpon-surface-2 p-1.5 flex items-center justify-center overflow-hidden mb-5">
                   <img
                     src={monster.svg}
                     alt={monster.name}
@@ -102,7 +102,7 @@ export function Monsters() {
                   />
                 </div>
 
-                <div className="min-w-0">
+                <div>
                   <h3
                     className="text-lg text-arpon-text-primary mb-2"
                     style={{

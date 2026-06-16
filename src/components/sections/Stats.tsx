@@ -39,7 +39,7 @@ export function Stats() {
     <section className="py-32 lg:py-40 bg-arpon-surface-3" id="estadisticas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mx-auto mb-16 text-center">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -69,38 +69,38 @@ export function Stats() {
               }}
               className="p-8 rounded-[12px] border border-arpon-border bg-white"
             >
-              <div className="flex items-center gap-3 mb-5">
+              <div className="flex flex-col items-center text-center">
                 <stat.icon
-                  size={22}
+                  size={24}
                   weight="duotone"
-                  className="text-arpon-teal"
+                  className="text-arpon-teal mb-3"
                 />
                 <span
-                  className="data-label text-arpon-text-muted"
+                  className="data-label text-arpon-text-muted mb-4"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {stat.label}
                 </span>
-              </div>
 
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-3xl md:text-4xl text-arpon-text-primary tracking-tight"
-                  style={{
-                    fontFamily: "var(--font-space)",
-                    fontWeight: 700,
-                  }}
-                >
-                  {stat.value}
-                </span>
-                <span
-                  className={`text-sm font-medium pb-1 ${
-                    stat.trendUp ? "text-arpon-success" : "text-arpon-error"
-                  }`}
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {stat.trend}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-3xl md:text-4xl text-arpon-text-primary tracking-tight"
+                    style={{
+                      fontFamily: "var(--font-space)",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span
+                    className={`text-sm font-medium ${
+                      stat.trendUp ? "text-arpon-success" : "text-arpon-error"
+                    }`}
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {stat.trend}
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
