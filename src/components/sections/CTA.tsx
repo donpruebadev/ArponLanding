@@ -5,14 +5,14 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 export function CTA() {
   return (
-    <section className="py-[32rem] bg-white" id="demo">
+    <section className="py-32 lg:py-40 bg-white" id="demo">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[16px] border border-arpon-border bg-arpon-surface-1 py-20 px-12 md:px-20 text-center"
+          className="relative overflow-hidden rounded-[16px] border border-arpon-border bg-arpon-surface-1 py-16 px-10 md:px-16 lg:px-20 text-center"
         >
           {/* Background accent glow */}
           <div

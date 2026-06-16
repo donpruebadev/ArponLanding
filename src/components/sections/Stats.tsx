@@ -36,10 +36,10 @@ const STATS = [
 
 export function Stats() {
   return (
-    <section className="py-[32rem] bg-arpon-surface-3" id="estadisticas">
+    <section className="py-32 lg:py-40 bg-arpon-surface-3" id="estadisticas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-28">
+        <div className="max-w-2xl mb-16">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
