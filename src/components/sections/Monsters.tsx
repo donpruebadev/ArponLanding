@@ -9,30 +9,15 @@ const MONSTERS = [
     type: "Sobreprecios",
     description: "Contratos con precios inflados artificialmente",
     color: "#EF4444",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <circle cx="40" cy="40" r="32" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="40" cy="40" r="20" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.4" />
-        <circle cx="32" cy="34" r="3" fill="currentColor" />
-        <circle cx="48" cy="34" r="3" fill="currentColor" />
-        <path d="M30 50 Q40 58 50 50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    svg: "/monsters/svg/el-inflado.svg",
   },
   {
-    id: "la-hidra",
+    id: "la-hidra-burocratica",
     name: "La Hidra Burocrática",
     type: "Burocracia excesiva",
     description: "Procesos innecesariamente complejos",
     color: "#F59E0B",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <path d="M20 55 Q30 25 40 55 Q50 25 60 55" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="30" cy="40" r="2.5" fill="currentColor" />
-        <circle cx="50" cy="40" r="2.5" fill="currentColor" />
-        <path d="M15 60 Q40 70 65 60" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-      </svg>
-    ),
+    svg: "/monsters/svg/la-hidra-burocratica.svg",
   },
   {
     id: "el-coloso",
@@ -40,15 +25,7 @@ const MONSTERS = [
     type: "Falta de transparencia",
     description: "Entidades que ocultan información",
     color: "#6B7280",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <rect x="20" y="20" width="40" height="50" rx="3" fill="none" stroke="currentColor" strokeWidth="2" />
-        <line x1="28" y1="35" x2="52" y2="35" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-        <line x1="28" y1="45" x2="52" y2="45" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-        <line x1="28" y1="55" x2="42" y2="55" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-        <rect x="30" y="25" width="20" height="3" rx="1" fill="currentColor" opacity="0.3" />
-      </svg>
-    ),
+    svg: "/monsters/svg/el-coloso.svg",
   },
   {
     id: "la-sanguijuela",
@@ -56,13 +33,7 @@ const MONSTERS = [
     type: "Desvíos de recursos",
     description: "Recursos que no llegan a su destino",
     color: "#EF4444",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <path d="M25 40 Q40 20 55 40 Q40 60 25 40" fill="none" stroke="currentColor" strokeWidth="2" />
-        <circle cx="40" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="40" cy="40" r="3" fill="currentColor" />
-      </svg>
-    ),
+    svg: "/monsters/svg/la-sanguijuela.svg",
   },
   {
     id: "la-red",
@@ -70,16 +41,7 @@ const MONSTERS = [
     type: "Corrupción sistémica",
     description: "Redes de corrupción interconectadas",
     color: "#EF4444",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <circle cx="40" cy="25" r="12" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="25" cy="55" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="55" cy="55" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <line x1="40" y1="37" x2="25" y2="45" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
-        <line x1="40" y1="37" x2="55" y2="45" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
-        <line x1="25" y1="55" x2="55" y2="55" stroke="currentColor" strokeWidth="0.8" opacity="0.5" />
-      </svg>
-    ),
+    svg: "/monsters/svg/la-red.svg",
   },
   {
     id: "el-escondido",
@@ -87,13 +49,7 @@ const MONSTERS = [
     type: "Opacidad",
     description: "Información oculta o difícil de acceder",
     color: "#6B7280",
-    icon: (
-      <svg viewBox="0 0 80 80" className="w-full h-full">
-        <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
-        <line x1="20" y1="20" x2="60" y2="60" stroke="currentColor" strokeWidth="2" />
-        <circle cx="40" cy="40" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
+    svg: "/monsters/svg/el-escondido.svg",
   },
 ];
 
@@ -101,7 +57,6 @@ export function Monsters() {
   return (
     <section className="py-40 bg-arpon-surface-0" id="monstruos">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section header */}
         <div className="max-w-2xl mb-24">
           <span
             className="data-label text-arpon-teal"
@@ -121,7 +76,6 @@ export function Monsters() {
           </p>
         </div>
 
-        {/* Monster grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {MONSTERS.map((monster, i) => (
             <motion.div
@@ -137,15 +91,17 @@ export function Monsters() {
               className="group relative p-8 rounded-[12px] border border-arpon-border bg-arpon-surface-1 hover:border-arpon-teal/20 transition-all duration-300"
             >
               <div className="flex items-start gap-5">
-                {/* Monster icon */}
-                <div
-                  className="w-16 h-16 flex-shrink-0"
-                  style={{ color: monster.color }}
-                >
-                  {monster.icon}
+                <div className="w-20 h-20 flex-shrink-0 rounded-[8px] bg-arpon-surface-2 p-1.5 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={monster.svg}
+                    alt={monster.name}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                    style={{ filter: `drop-shadow(0 0 2px ${monster.color}40)` }}
+                  />
                 </div>
 
-                {/* Info */}
                 <div className="min-w-0">
                   <h3
                     className="text-lg text-arpon-text-primary mb-2"
