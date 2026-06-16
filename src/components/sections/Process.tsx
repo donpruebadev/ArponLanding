@@ -40,7 +40,7 @@ export function Process() {
             CÓMO FUNCIONA
           </span>
           <h2
-            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight"
+            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight text-balance"
             style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
           >
             Tres pasos para cazar anomalías
@@ -67,17 +67,9 @@ export function Process() {
                 <div className="hidden md:block absolute top-14 left-full w-full h-px bg-arpon-border z-0" />
               )}
 
-              <div className="relative p-10 rounded-[12px] border border-arpon-border bg-white hover:border-arpon-teal/30 hover:shadow-[0_4px_16px_rgba(46,196,182,0.08)] transition-all duration-300">
-                {/* Number */}
-                <span
-                  className="data-label text-arpon-text-muted block mb-5"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {step.number}
-                </span>
-
+              <div className="relative p-8 rounded-[12px] border border-arpon-border bg-white hover:border-arpon-teal/30 hover:shadow-[0_4px_16px_rgba(46,196,182,0.08)] transition-all duration-300 text-center">
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-[8px] bg-arpon-teal/10 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-[8px] bg-arpon-teal/10 flex items-center justify-center mb-5 mx-auto">
                   <step.icon
                     size={28}
                     weight="duotone"
@@ -85,9 +77,17 @@ export function Process() {
                   />
                 </div>
 
+                {/* Number */}
+                <span
+                  className="data-label text-arpon-text-muted block mb-3"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  Paso {step.number}
+                </span>
+
                 {/* Content */}
                 <h3
-                  className="text-xl text-arpon-text-primary mb-4"
+                  className="text-xl text-arpon-text-primary mb-3"
                   style={{
                     fontFamily: "var(--font-space)",
                     fontWeight: 600,

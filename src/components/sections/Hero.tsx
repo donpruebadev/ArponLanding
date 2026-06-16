@@ -63,7 +63,7 @@ export function Hero() {
                 delay: 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-6 text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-arpon-text-primary"
+              className="mt-6 text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-arpon-text-primary text-balance"
               style={{
                 fontFamily: "var(--font-space)",
                 fontWeight: 700,

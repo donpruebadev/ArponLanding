@@ -29,7 +29,7 @@ export function CTA() {
             </span>
 
             <h2
-              className="mt-8 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary max-w-3xl mx-auto leading-tight"
+              className="mt-8 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary max-w-3xl mx-auto leading-tight text-balance"
               style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
             >
               La transparencia empieza

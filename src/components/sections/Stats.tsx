@@ -47,7 +47,7 @@ export function Stats() {
             IMPACTO
           </span>
           <h2
-            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight"
+            className="mt-5 text-3xl md:text-4xl lg:text-5xl tracking-tight text-arpon-text-primary leading-tight text-balance"
             style={{ fontFamily: "var(--font-space)", fontWeight: 700 }}
           >
             Números que hablan

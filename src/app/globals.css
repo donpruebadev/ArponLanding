@@ -83,7 +83,11 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-gutter: stable;
+}
+
+/* Balance wrapped headings so centered text doesn't look lopsided */
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
 body {
