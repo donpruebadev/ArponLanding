@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="en" style="width: 1280px; height: 3373px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARPÓN - Detectamos lo que otros no ven</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Tactical Grid Overlay */
+        .tactical-bg {
+            background-image: 
+                linear-gradient(to right, rgba(46, 196, 182, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(46, 196, 182, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#303032",
+                        "primary-container": "#0f1c2c",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9fa",
+                        "primary-fixed-dim": "#bac8dc",
+                        "surface-container-highest": "#e4e2e3",
+                        "outline-variant": "#c4c6cc",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary-fixed": "#101b30",
+                        "on-secondary-fixed-variant": "#3c475d",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f5f3f4",
+                        "surface-dim": "#dbd9db",
+                        "error-container": "#ffdad6",
+                        "outline": "#74777d",
+                        "on-primary-container": "#778598",
+                        "on-surface-variant": "#44474c",
+                        "surface-tint": "#525f71",
+                        "on-secondary-container": "#5a647c",
+                        "tertiary-fixed-dim": "#e0c1a0",
+                        "secondary": "#545e76",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#bbc6e2",
+                        "secondary-container": "#d7e2ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bac8dc",
+                        "on-tertiary-fixed": "#281804",
+                        "on-tertiary-container": "#9a7f61",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#d7e2ff",
+                        "inverse-on-surface": "#f2f0f1",
+                        "tertiary": "#000000",
+                        "on-background": "#1b1b1d",
+                        "tertiary-fixed": "#feddba",
+                        "on-tertiary-fixed-variant": "#584329",
+                        "surface-variant": "#e4e2e3",
+                        "on-primary-fixed": "#0f1c2c",
+                        "primary-fixed": "#d6e4f9",
+                        "surface-container-high": "#eae7e9",
+                        "on-primary-fixed-variant": "#3a4859",
+                        "surface-container": "#f0edee",
+                        "tertiary-container": "#281804",
+                        "surface": "#fbf9fa",
+                        "background": "#fbf9fa",
+                        // Brand colors
+                        "brand-deep-blue": "#0D1B2A",
+                        "brand-steel-blue": "#1B263B",
+                        "brand-accent-teal": "#2EC4B6",
+                        "brand-light-gray": "#E6EBEB"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "nav-link": ["Space Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Anton", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "display-hero": ["Anton", "sans-serif"],
+                        "headline-lg": ["Anton", "sans-serif"],
+                        "label-caps": ["Space Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "nav-link": ["16px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8F9FA] text-brand-deep-blue font-body-md overflow-x-hidden selection:bg-brand-accent-teal selection:text-brand-deep-blue">
+<!-- Top Navigation (Light Mode Header) -->
+<header class="bg-[#F8F9FA] text-brand-deep-blue w-full fixed top-0 z-50 border-b border-brand-light-gray shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<!-- Using Logo from user's request, but making it fit the dark theme header -->
+<div class="h-8 w-8 bg-brand-deep-blue rounded-full flex items-center justify-center overflow-hidden">
+<img alt="ARPÓN Logo" class="h-6 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU-5P-E0Xudl9Zyg_u0wNCWgCsDD6E78vdLSfLuA2xiqxY2rxKxHBE26Zz4G3aIxmQkP8Kv_0ZDv0pzJFU5P9e0-GGpB8WLy2_Rx2V74FtKXNzMoa080ZjDYleI-iGD4QnTOOXj3Ae97Kk1ArkJQMovXGriTVn3xOOSYk3EcLimbaJJQXD3zW_gy1c2_mgGBpwE-poyEukZkPOoLzsFRL2BbAnPkMTM_IWxQJySOHlYQKkRwrzfgEVq4IwyRjCgBm70J0tB1DErA"/>
+</div>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-deep-blue uppercase tracking-widest">ARPÓN</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-nav-link text-nav-link text-brand-accent-teal border-b-2 border-brand-accent-teal pb-1" href="#">Platform</a>
+<a class="font-nav-link text-nav-link text-surface-tint hover:text-brand-accent-teal transition-colors" href="#bestiario">Monsters</a>
+<a class="font-nav-link text-nav-link text-surface-tint hover:text-brand-accent-teal transition-colors" href="#archivo">Ethics</a>
+<a class="font-nav-link text-nav-link text-surface-tint hover:text-brand-accent-teal transition-colors" href="#">Login</a>
+</div>
+<button class="hidden md:block bg-brand-accent-teal text-brand-deep-blue font-nav-link text-nav-link px-6 py-2 rounded font-bold hover:bg-brand-deep-blue hover:text-white transition-colors border-2 border-transparent">
+                Get Started
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-brand-deep-blue">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+</header>
+<!-- Hero Section (Light Mode) -->
+<section class="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden tactical-bg">
+<!-- Abstract Harpoon Visual Element -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-px bg-brand-accent-teal opacity-50 hidden md:block">
+<div class="absolute right-0 -top-2 w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-brand-accent-teal border-b-[8px] border-b-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div class="animate-slide-up">
+<h1 class="font-display-hero text-headline-lg-mobile md:text-display-hero text-brand-deep-blue mb-6">
+                    Detectamos lo que <br/><span class="text-brand-accent-teal">otros no ven.</span>
+</h1>
+<p class="font-body-md text-body-md text-surface-tint max-w-xl mb-8 md:text-lg">
+                    Arpones que cazan monstruos. Exploramos contratos gubernamentales para detectar irregularidades y hacer lo invisible, evidente.
+                </p>
+<div class="flex gap-4">
+<button class="bg-brand-accent-teal text-brand-deep-blue font-nav-link text-nav-link px-8 py-3 font-bold hover:bg-brand-deep-blue hover:text-white transition-colors border-2 border-transparent">
+                        Iniciar Análisis
+                    </button>
+<button class="border-2 border-brand-steel-blue text-brand-deep-blue font-nav-link text-nav-link px-8 py-3 font-bold hover:border-brand-accent-teal hover:text-brand-accent-teal transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">play_arrow</span> Ver Demo
+                    </button>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[500px] flex items-center justify-center animate-slide-up delay-200">
+<!-- Decorative scope rings -->
+<div class="absolute inset-0 border-2 border-brand-steel-blue rounded-full opacity-20 scale-75 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+<div class="absolute inset-0 border border-brand-accent-teal rounded-full opacity-30 scale-90"></div>
+<!-- Central Logo Element acting as the "Crosshair" -->
+<div class="relative z-20 bg-brand-steel-blue p-8 rounded-full border border-brand-accent-teal shadow-[0_0_30px_rgba(46,196,182,0.2)] animate-float">
+<img alt="ARPÓN Target Scope" class="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU-5P-E0Xudl9Zyg_u0wNCWgCsDD6E78vdLSfLuA2xiqxY2rxKxHBE26Zz4G3aIxmQkP8Kv_0ZDv0pzJFU5P9e0-GGpB8WLy2_Rx2V74FtKXNzMoa080ZjDYleI-iGD4QnTOOXj3Ae97Kk1ArkJQMovXGriTVn3xOOSYk3EcLimbaJJQXD3zW_gy1c2_mgGBpwE-poyEukZkPOoLzsFRL2BbAnPkMTM_IWxQJySOHlYQKkRwrzfgEVq4IwyRjCgBm70J0tB1DErA"/>
+</div>
+<!-- Crosshair lines -->
+<div class="absolute inset-x-0 top-1/2 h-px bg-brand-accent-teal opacity-30"></div>
+<div class="absolute inset-y-0 left-1/2 w-px bg-brand-accent-teal opacity-30"></div>
+</div>
+</div>
+</section>
+<!-- Statistics Section (Brutalist Data) -->
+<section class="bg-brand-light-gray py-12 border-y-2 border-brand-steel-blue/20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-brand-steel-blue/20 bg-white">
+<div class="p-8 border-b md:border-b-0 md:border-r border-brand-steel-blue/20 flex flex-col items-center text-center animate-slide-up">
+<span class="material-symbols-outlined text-4xl text-brand-accent-teal mb-4">monitoring</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-brand-deep-blue mb-2">+1.2B</h3>
+<p class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest">Pesos Detectados</p>
+</div>
+<div class="p-8 border-b md:border-b-0 md:border-r border-brand-steel-blue/20 flex flex-col items-center text-center animate-slide-up delay-100 bg-[#F8F9FA]">
+<span class="material-symbols-outlined text-4xl text-brand-accent-teal mb-4">description</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-brand-deep-blue mb-2">14,000</h3>
+<p class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest">Contratos Analizados</p>
+</div>
+<div class="p-8 flex flex-col items-center text-center animate-slide-up delay-200">
+<span class="material-symbols-outlined text-4xl text-brand-accent-teal mb-4">memory</span>
+<h3 class="font-headline-lg text-headline-lg-mobile text-brand-deep-blue mb-2">98.5%</h3>
+<p class="font-label-caps text-label-caps text-surface-tint uppercase tracking-widest">Precisión IA</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Bestiary of Corruption Section -->
+<section class="py-24 bg-transparent relative" id="bestiario">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-end justify-between mb-16 border-b-2 border-brand-steel-blue/20 pb-6">
+<div>
+<span class="font-label-caps text-label-caps text-brand-accent-teal block mb-2">CATÁLOGO DE AMENAZAS</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-deep-blue">El Bestiario de la Corrupción</h2>
+</div>
+<div class="hidden md:flex gap-2">
+<button class="w-10 h-10 border border-brand-steel-blue/50 flex items-center justify-center text-brand-deep-blue hover:bg-brand-accent-teal hover:border-brand-accent-teal transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="w-10 h-10 border border-brand-steel-blue/50 flex items-center justify-center text-brand-deep-blue hover:bg-brand-accent-teal hover:border-brand-accent-teal transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<!-- Bento Grid Layout for Monsters -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Card 1: Coloso Blindado (Large) -->
+<div class="md:col-span-2 md:row-span-2 bg-brand-light-gray border border-brand-steel-blue p-6 relative group overflow-hidden animate-slide-up">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiMyZWM0YjYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')] opacity-50"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h3 class="font-nav-link text-xl font-bold text-brand-deep-blue bg-white px-4 py-1 border border-brand-steel-blue inline-block">Contratación Opaca</h3>
+<span class="bg-brand-deep-blue text-brand-accent-teal font-label-caps text-label-caps px-3 py-1">PRIORIDAD ALTA</span>
+</div>
+<div class="absolute right-0 bottom-0 w-3/4 h-3/4 translate-x-12 translate-y-12 group-hover:translate-x-8 group-hover:translate-y-8 transition-transform duration-500 animate-float">
+<img alt="Coloso Blindado" class="w-full h-full object-contain drop-shadow-2xl opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsNHKJl2kOpD37tRrhlXUNHFMErTQuDy95GSTLfFX85XpHWQBzvJHZn6BmKLbyFw1EBB30Kyyy9JEa_rO276IgEMZnIzq5f75XbTWZB2IkW0-Nt1XCMvL9CM3ehgDdWHqQJacWORWecISggC3ylHT88odmKUpB-7YNgiWqJ25Kl0x_KpDeFJo5fAQJevXNVTdgBP4b_NRs5mIceR2Ovy6XWXVQCWbdfHXsfaGgRcByGfpN8Vr0cZIgdp5W4yJ-fNKuEh-qihCwXg"/>
+</div>
+<div class="w-1/2 bg-white/90 backdrop-blur p-4 border-l-4 border-brand-accent-teal mt-auto">
+<p class="font-body-sm text-body-sm text-surface-tint">Entidades colosales que ocultan sus movimientos bajo capas de burocracia inaccesible, dificultando el rastreo de fondos públicos.</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Don Tentáculos -->
+<div class="bg-surface-container-high border border-brand-steel-blue p-6 relative group overflow-hidden animate-slide-up delay-100">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-nav-link text-lg font-bold text-brand-deep-blue mb-2">Tráfico de Influencias</h3>
+<div class="flex-grow flex items-center justify-center relative my-4">
+<!-- Scanner effect -->
+<div class="absolute inset-0 bg-brand-accent-teal/5 rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+<img alt="Don Tentáculos" class="w-32 h-32 object-contain relative z-20 animate-float drop-shadow-xl opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbofXPP5w01gZ87wi8S2awHrZFbBkwkOVzIW0A6XC0vqRv1svDMFakX-iiy8oh5Ml2HT93JlDhXWXK-RsmioolntDKxpTncBirZDJesPBjElTg5Ll60d8ewk7YPLv0TIDpubL5qYWnl8h9YyyhOOkfomzUU_zzSQX2xNz8rbsYp_9eaNiGUMA2Xs0wffaL9uoypt0pQTwwCPKiElMi4l46uHfLrfSVmc99BBXo-5GVeUj44q3rz457d5blhy5JHydGJQ1lzXKqWg"/>
+</div>
+<p class="font-body-sm text-body-sm text-surface-tint text-center">Conexiones ocultas que manipulan adjudicaciones desde las sombras.</p>
+</div>
+</div>
+<!-- Card 3: La Serpiente -->
+<div class="bg-surface-container-high border border-brand-steel-blue p-6 relative group overflow-hidden animate-slide-up delay-200">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-nav-link text-lg font-bold text-brand-deep-blue mb-2">Desvío de Fondos</h3>
+<div class="flex-grow flex items-center justify-center relative my-4">
+<img alt="La Serpiente" class="w-32 h-32 object-contain relative z-20 animate-float drop-shadow-xl opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69waj3hXNSL6wPhyslgqwzbteOJVVh8C3bmMGXzSOi1OGWwk0idEQOfCSu31UWx00z0YQifwYK-1lNsnyLZjtxCaFRRs7DlAnWAO58p8ZrorDDVdXpYYZJZ30GiSPxSX0qBlHDLYGv423tNd18TpuYvvhooBa-B5s3VmC8DdvC1r_R9tiP-Tf0P9bh4MEcIo1eHxpMQAV-2tyOL7N0rTqSbtASNydSn90w5wkfCiAkmWYEFr7F4urQuYp4Qpi8I_-5L6XCnVEFg" style="animation-delay: -2s;"/>
+</div>
+<p class="font-body-sm text-body-sm text-surface-tint text-center">Rutas sigilosas y complejas diseñadas para eludir los controles fiscales estándar.</p>
+</div>
+</div>
+<!-- Card 4: Bonachón -->
+<div class="bg-surface-container-high border border-brand-steel-blue p-6 relative group overflow-hidden animate-slide-up delay-300">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-nav-link text-lg font-bold text-brand-deep-blue mb-2">Clientelismo Político</h3>
+<div class="flex-grow flex items-center justify-center relative my-4">
+<img alt="Bonachón" class="w-32 h-32 object-contain relative z-20 animate-float drop-shadow-xl opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGr2o-Xt9p7kRoEjZ8y5Eh8wW5rn2E4fURioK2v_HHtr7DzxEwFGABqFmLrxNnDdXkVQIN4rGa4yoBBKvcVogUu730dQWAhC7GSel2bL5lPhakBiwL9zAJp0TQQBv2-PXRm9S8xfidfNe8TkGmaUsgIqOCDEjwmzVDZBu-CjUEjodrWfdEd6v5ggjDUbBQsKctuWkP6AWtuhaNQjDP-uTo_-7YQ9vnUalrodwffAFBBoNpCGi-HSGYLq_QPziKckBubkvJB5DhcQ" style="animation-delay: -1s;"/>
+</div>
+<p class="font-body-sm text-body-sm text-surface-tint text-center">Asignaciones que priorizan la lealtad partidista sobre la competencia técnica.</p>
+</div>
+</div>
+<!-- Card 5: Sanguijuela -->
+<div class="bg-surface-container-high border border-brand-steel-blue p-6 relative group overflow-hidden animate-slide-up delay-400">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-nav-link text-lg font-bold text-brand-deep-blue mb-2">Sobreprecios</h3>
+<div class="flex-grow flex items-center justify-center relative my-4">
+<img alt="Sanguijuela" class="w-32 h-32 object-contain relative z-20 animate-float drop-shadow-xl opacity-90 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNsBLXomxlykfraVg05pq-yU-voAvIfxAV_cKKcDfm98X8QX4eFUhfF_b2EXoVc45eiVsCQxhtLM69j1KoFOukTswvFF7A9U18HOr6pr5Qe1prFz2xSybTlwP9MQupNOETuC_NryixvVnkoxZX7HrAcNd2kzUZMleYt7HERwqT466HTkHHVpc3b8Llg5ldUnaftwSU_AxnnDXUSoM_iQQBMJhuFmrKSAbwpe1_IHB62abAYC29czMHMS2Iri6ziGeOM8qmLBTtyQ" style="animation-delay: -3s;"/>
+</div>
+<p class="font-body-sm text-body-sm text-surface-tint text-center">Drenaje sistemático de presupuestos mediante inflado injustificado de costos.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-24 bg-white relative overflow-hidden border-t border-brand-light-gray" id="conspiraciones"><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10"><div class="mb-16 border-b-2 border-brand-steel-blue/20 pb-6"><span class="font-label-caps text-label-caps text-brand-accent-teal block mb-2 uppercase">Investigación de Redes</span><h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-deep-blue">Conspiraciones: Los Hilos de la Opacidad</h2><p class="font-body-md text-body-md text-surface-tint max-w-3xl mt-4">La corrupción no opera de forma aislada. Nuestros algoritmos detectan los patrones de colusión y las redes ocultas que se tejen en las sombras de la burocracia.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-surface-container-low border border-brand-steel-blue/20 p-8 group hover:border-brand-accent-teal transition-colors duration-300 flex flex-col h-full"><div class="mb-6 overflow-hidden bg-white p-4 border border-brand-steel-blue/10"><img alt="Redes de Corrupción" class="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/></div><h3 class="font-nav-link text-xl font-bold text-brand-deep-blue mb-3">Redes de Corrupción</h3><p class="font-body-sm text-surface-tint">Conexiones invisibles entre entidades que manipulan el flujo de recursos públicos.</p></div><div class="bg-surface-container-low border border-brand-steel-blue/20 p-8 group hover:border-brand-accent-teal transition-colors duration-300 flex flex-col h-full"><div class="mb-6 overflow-hidden bg-white p-4 border border-brand-steel-blue/10"><img alt="Planeación en las Sombras" class="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/></div><h3 class="font-nav-link text-xl font-bold text-brand-deep-blue mb-3">Planeación en las Sombras</h3><p class="font-body-sm text-surface-tint">Acuerdos coordinados para amañar licitaciones antes de que se hagan públicas.</p></div><div class="bg-surface-container-low border border-brand-steel-blue/20 p-8 group hover:border-brand-accent-teal transition-colors duration-300 flex flex-col h-full"><div class="mb-6 overflow-hidden bg-white p-4 border border-brand-steel-blue/10"><img alt="Acuerdos Burocráticos" class="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/></div><h3 class="font-nav-link text-xl font-bold text-brand-deep-blue mb-3">Acuerdos Burocráticos</h3><p class="font-body-sm text-surface-tint">Pactos sellados bajo capas de trámites diseñados para ocultar el rastro del dinero.</p></div></div></div></section>
+<!-- Archive Section (Asymmetric Layout) -->
+<section class="py-24 bg-[#F8F9FA] text-brand-deep-blue border-t-4 border-brand-accent-teal relative overflow-hidden" id="archivo">
+<div class="tactical-bg absolute inset-0 opacity-20"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 relative">
+<div class="absolute inset-0 bg-brand-accent-teal translate-x-4 translate-y-4 border border-brand-accent-teal"></div>
+<div class="bg-brand-steel-blue border border-brand-accent-teal p-8 relative z-10 flex items-center justify-center min-h-[400px]">
+<div class="absolute inset-4 border border-dashed border-outline-variant/30"></div>
+<img alt="El Archivo" class="w-64 h-64 object-contain animate-float drop-shadow-[0_0_20px_rgba(46,196,182,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFqLeDOaw-2YxycveHfqdBtp4nVFsiBiLyF_vrzcmNU-2EEloIRNUZNStAQaSNEZYq7h2m0U9SQcxO9mk7M2pyZXFesfpPLGOr-_xVISi2EFkYFVYkCr-G637OXGi1VRnaoDX6S4LXwayN4NvZum7LCoEIaqMNZIieNCIcXAyJwf8KfcOsIQS03byb6NZ40Z30nLHF-j7stZN4cEJPfrVRsBWLUFVKeeHpshepbvC0OkcbdYj1FX9iHmojQ15Tg6w-DrDz9M_mHg"/>
+<!-- Technical UI Overlay elements -->
+<div class="absolute bottom-8 right-8 font-label-caps text-[10px] text-brand-accent-teal flex items-center gap-1">
+<span class="w-2 h-2 bg-brand-accent-teal rounded-full animate-pulse"></span>El Archivo durmiente</div>
+</div>
+</div>
+<div class="md:col-span-7 md:pl-12">
+<span class="font-label-caps text-label-caps text-brand-accent-teal block mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">search</span> INVESTIGACIÓN PROFUNDA
+                    </span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Buceo en la Burocracia</h2>
+<p class="font-body-md text-body-md text-surface-tint mb-6 text-lg">
+                        El Archivo no es solo un repositorio, es nuestro terreno de caza. Nuestros algoritmos penetran las densas capas de documentación gubernamental, cruzando datos de múltiples fuentes para identificar patrones anómalos que el ojo humano pasaría por alto.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-accent-teal mt-1">check_box</span>
+<span class="font-body-sm text-surface-tint">Extracción automatizada de entidades (NER) en pliegos de licitación.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-accent-teal mt-1">check_box</span>
+<span class="font-body-sm text-surface-tint">Análisis de redes de beneficiarios reales para detectar colusión.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-brand-accent-teal mt-1">check_box</span>
+<span class="font-body-sm text-surface-tint">Alertas en tiempo real sobre desviaciones presupuestarias históricas.</span>
+</li>
+</ul>
+<button class="bg-transparent border-2 border-brand-accent-teal text-brand-accent-teal font-nav-link text-nav-link px-8 py-3 font-bold hover:bg-brand-accent-teal hover:text-brand-deep-blue transition-colors">
+                        Explorar Metodología
+                    </button>
+</div>
+</div>
+</div>
+</section><section class="py-24 bg-white text-brand-deep-blue border-t border-brand-light-gray relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-brand-accent-teal block mb-4">EL PODER DE LA VERDAD</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">La Tecnología como Arma Indagatoria</h2>
+<div class="space-y-8">
+<div>
+<h3 class="font-nav-link text-xl font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-accent-teal">bolt</span> Poder Algorítmico
+                        </h3>
+<p class="font-body-md text-surface-tint">Nuestros sistemas procesan millones de puntos de datos en segundos, encontrando los hilos invisibles que conectan la corrupción con sus beneficiarios.</p>
+</div>
+<div>
+<h3 class="font-nav-link text-xl font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-accent-teal">visibility</span> Vigilancia Automatizada
+                        </h3>
+<p class="font-body-md text-surface-tint">Monitoreo constante de boletines oficiales y registros públicos. No descansamos para que la transparencia sea la norma, no la excepción.</p>
+</div>
+<div>
+<h3 class="font-nav-link text-xl font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-accent-teal">gavel</span> Justicia Digital
+                        </h3>
+<p class="font-body-md text-surface-tint">Convertimos datos complejos en evidencia accionable, empoderando a ciudadanos y organismos para derrotar a los monstruos de la burocracia.</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 relative">
+<div class="absolute inset-0 bg-brand-accent-teal/5 rounded-full animate-pulse"></div>
+<div class="relative z-10 p-8 flex justify-center">
+<img alt="Coloso Blindado Atacado" class="w-full max-w-md object-contain drop-shadow-2xl animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWzVQOYgNMdG4e5w0xHEkA3VgXR0eOFsjMzaLcTcPjozpD0OCjZPHQEyRyIK0omA-bgBxx0GYNvvZMP-EHQ3SZQLLr4gBpzWyxUq-NgAbuPWE-XrqIi3gQkpgaKCfz0Fda1Vlt3pXD3dzWFPhtMlyW7EyorMnfyGScxT53pmomBsGmXQCADP0SlCG9ENj7pZlhljx1HorqZ8JCC0z_MPuB-E2_FaLw9Al3CvhmJok1ElFGtH2GsIG5ZyyGU6TiYTeObH_XgTYjYw"/>
+</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-brand-accent-teal to-transparent opacity-50"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-brand-light-gray w-full border-t-4 border-brand-accent-teal text-brand-deep-blue font-body-sm text-body-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="flex flex-col items-start gap-4">
+<span class="font-headline-lg text-2xl text-brand-deep-blue uppercase tracking-tighter">ARPÓN</span>
+<p class="text-surface-tint max-w-xs">Tecnología táctica para la transparencia pública y la caza de irregularidades.</p>
+</div>
+<div class="flex flex-col gap-2 md:col-start-3 md:text-right">
+<a class="text-surface-tint hover:text-brand-deep-blue transition-opacity" href="#">Terms of Service</a>
+<a class="text-surface-tint hover:text-brand-deep-blue transition-opacity" href="#">Privacy Policy</a>
+<a class="text-surface-tint hover:text-brand-deep-blue transition-opacity" href="#">Contact</a>
+<a class="text-surface-tint hover:text-brand-deep-blue transition-opacity" href="#">Press Kit</a>
+</div>
+<div class="md:col-span-3 mt-8 pt-8 border-t border-brand-steel-blue/20 text-surface-tint font-label-caps text-label-caps text-center md:text-left">
+                © 2024 ARPÓN. Technological Vigilance for Public Integrity.
+            </div>
+</div>
+</footer>
+<div aria-hidden="true" data-snapdom-sandbox="true" id="snapdom-sandbox" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>

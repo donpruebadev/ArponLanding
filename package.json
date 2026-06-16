@@ -1,0 +1,10 @@
+{
+  "name": "arpon-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for ARpón — tactical transparency for public contracts",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "serve": "npx -y serve ."
+  }
+}
