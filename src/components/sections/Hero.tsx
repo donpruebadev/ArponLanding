@@ -35,7 +35,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-36 pb-28 w-full">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left: Content */}
           <div className="max-w-xl">

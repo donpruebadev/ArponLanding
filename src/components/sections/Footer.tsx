@@ -1,26 +1,37 @@
 export function Footer() {
   return (
-    <footer className="py-20 bg-arpon-surface-1 border-t border-arpon-border">
+    <footer className="py-24 bg-arpon-surface-1 border-t border-arpon-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-16">
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="#inicio" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-arpon-teal rounded flex items-center justify-center">
+              <div className="w-9 h-9 bg-arpon-teal rounded-[6px] flex items-center justify-center">
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 32 32"
                   fill="none"
-                  className="w-5 h-5 text-arpon-deep"
+                  className="w-6 h-6 text-white"
                   aria-hidden="true"
                 >
                   <path
-                    d="M12 2L12 18M12 18L6 12M12 18L18 12"
+                    d="M16 4L16 22"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M16 22L8 14"
                     stroke="currentColor"
                     strokeWidth="2.5"
                     strokeLinecap="round"
-                    strokeLinejoin="round"
                   />
-                  <circle cx="12" cy="20" r="2" fill="currentColor" />
+                  <path
+                    d="M16 22L24 14"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="16" cy="26" r="2.5" fill="currentColor" />
                 </svg>
               </div>
               <span

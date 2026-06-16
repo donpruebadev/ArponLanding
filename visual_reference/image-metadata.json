@@ -1,0 +1,174 @@
+{
+  "project": "ARPÓN",
+  "description": "Sistema visual para plataforma de detección de irregularidades, opacidad y corrupción en contratos gubernamentales. El concepto central: 'Arpones que cazan monstruos' - exploramos contratos públicos para hacer lo invisible, evidente.",
+  "brand": {
+    "palette": {
+      "primary_dark": "#0D1B2A",
+      "secondary_dark": "#1B263B",
+      "accent_teal": "#2EC4B6",
+      "light_gray": "#E6EBEB",
+      "white": "#F8F9FA"
+    },
+    "typography": {
+      "headings": "Space Grotesk",
+      "body": "Inter"
+    },
+    "tagline": "Detectamos lo que otros no ven."
+  },
+  "images": {
+    "main": {
+      "character_sheet.png": {
+        "description": "Character sheet completo de ARPÓN. Catálogo de monstruos representando irregularidades en 6 estados emocionales: Victoriosos, Asustados, Tristes, Enfrentados (con arpón), Durmiendo/Inactivos y Conspirando. Incluye leyenda de símbolos.",
+        "type": "reference",
+        "category": "design_system"
+      },
+      "concept_art.png": {
+        "description": "Prop sheet conceptual: logo ARPÓN, paleta de colores, tipografía (Space Grotesk/Inter), iconografía, componente UI (cards, botones, gráficas), ilustraciones secundarias de monstruos y flujo conceptual (Contratos Públicos → Análisis Avanzado → Irregularidades Detectadas).",
+        "type": "reference",
+        "category": "design_system"
+      },
+      "ArponBannerx.png": {
+        "description": "Banner horizontal con el nombre 'ARPÓN' en tipografía Space Grotesk, color azul oscuro (#0D1B2A) sobre fondo blanco. Uso: header y branding general.",
+        "type": "asset",
+        "category": "branding"
+      },
+      "ArponLogo (2).png": {
+        "description": "Ícono/símbolo de ARPÓN: arpón estilizado en forma de 'A' con punta flecha. Color azul oscuro (#0D1B2A) sobre fondo blanco. Uso: favicon, app icon, marca de agua.",
+        "type": "asset",
+        "category": "branding"
+      }
+    },
+    "monsters": {
+      "victorious": {
+        "El Inflado.png": {
+          "description": "Monstruo obeso e inflado con brazos levantados y expresión de triunfo. Representa excesos, sobreabundancia y despilfarro en contratos.",
+          "emotion": "victorious",
+          "symbolism": "Excesos y despilfarro"
+        },
+        "Hidra Burocratica.png": {
+          "description": "Hidra de tres cabezas con templo gubernamental sobre la cabeza central. Cada cabeza representa una entidad burocrática diferente. Simboliza la complejidad multi-entidad de la burocracia.",
+          "emotion": "victorious",
+          "symbolism": "Burocracia multi-entidad"
+        },
+        "Coloso Blindado.png": {
+          "description": "Monstruo gigante con edificio/templo gubernamental incrustado en la cabeza. Blindado y poderoso. Representa instituciones gubernamentales protegidas por su propia estructura.",
+          "emotion": "victorious",
+          "symbolism": "Instituciones blindadas"
+        },
+        "Sanguijuela.png": {
+          "description": "Sanguijuela oscura rodeada de billetes flotando a su alrededor. Ojos con X (inconsciente). Representa la absorción de recursos públicos.",
+          "emotion": "victorious",
+          "symbolism": "Absorción de recursos"
+        }
+      },
+      "scared": {
+        "Tembloroso.png": {
+          "description": "Monstruo oscuro temblando con expresión de miedo, dientes visibles y ojos con X. Sudor gotas alrededor. Representa el miedo a ser descubierto.",
+          "emotion": "scared",
+          "symbolism": "Miedo a la detección"
+        },
+        "Nessy.png": {
+          "description": "Criatura tipo Nessie (serpiente marina) asomando su cuello del agua con expresión asustada. Representa entidades que intentan permanecer ocultas.",
+          "emotion": "scared",
+          "symbolism": "Entidades ocultas"
+        },
+        "Escondido.png": {
+          "description": "Monstruo parcialmente oculto bajo el agua con solo ojos grandes visibles. Expresión de alerta. Representa irregularidades que se esconden bajo la superficie.",
+          "emotion": "scared",
+          "symbolism": "Irregularidades ocultas"
+        },
+        "Bonachon.png": {
+          "description": "Monstruo mirando hacia atrás con expresión paranoica. Forma redondeada y espina dorsal visible. Representa la paranoia de ser monitoreado.",
+          "emotion": "scared",
+          "symbolism": "Paranoia y vigilancia"
+        }
+      },
+      "sad": {
+        "Derretido.png": {
+          "description": "Monstruo derretido goteando con forma de gota. Ojos con X (inconsciente/derrotado). Representa irregularidades detectadas y neutralizadas.",
+          "emotion": "sad",
+          "symbolism": "Irregularidad neutralizada"
+        },
+        "Vacio.png": {
+          "description": "Monstruo con boca abierta desproporcionadamente y ojos vacíos con X. Lágrimas cayendo. Representa el vacío de contenido o justificación en contratos.",
+          "emotion": "sad",
+          "symbolism": "Vacío de sustancia"
+        },
+        "La Serpiente.png": {
+          "description": "Serpiente oscura enrollada sobre sí misma con ojos cerrados. Expresión de tristeza o rendición. Representa entidades que se rinden ante la investigación.",
+          "emotion": "sad",
+          "symbolism": "Rendición ante investigación"
+        },
+        "Declinante.png": {
+          "description": "Monstruo encorvado y en declive, con espinas dorsales visibles. Un solo ojo visible con X. Representa la decadencia de esquemas corruptos descubiertos.",
+          "emotion": "sad",
+          "symbolism": "Decadencia del esquema"
+        }
+      },
+      "combat": {
+        "Coloso BlindadoHuyendo.png": {
+          "description": "Coloso blindado huyendo con expresión de pánico. Arpón de ARPÓN (cian/teal) perseguiéndolo con cuerda. Representa irregularidades que intentan escapar del escrutinio.",
+          "emotion": "combat",
+          "symbolism": "Evasión del escrutinio"
+        },
+        "Coloso BlindadoAtacado.png": {
+          "description": "Coloso blindado recibiendo impacto directo del arpón de ARPÓN en el pecho. Fragmentos volando. Representa detección directa de corrupción institucional.",
+          "emotion": "combat",
+          "symbolism": "Detección directa"
+        },
+        "La SerpienteAtacada.png": {
+          "description": "Serpiente enrollada atrapada por el arpón de ARPÓN con cuerda cian. Ojos con X. Representa entidades capturadas por el análisis.",
+          "emotion": "combat",
+          "symbolism": "Entidad capturada"
+        }
+      },
+      "sleeping": {
+        "Dormilon.png": {
+          "description": "Monstruo dormido en posición acurrucada con 'Zzz' flotando. Representa irregularidades inactivas o暂时mente dormidas que pueden reactivarse.",
+          "emotion": "sleeping",
+          "symbolism": "Irregularidad inactiva"
+        },
+        "El Archivo.png": {
+          "description": "Monstruo oculto debajo de una pila masiva de documentos archivados. Ojos visibles entre los papeles con 'Zzz'. Representa información enterrada en archivos.",
+          "emotion": "sleeping",
+          "symbolism": "Información archivada"
+        }
+      },
+      "conspiring": {
+        "Planeacion.png": {
+          "description": "Dos monstruos reunidos examinando documentos y planos juntos. Representa la planificación coordinada de esquemas irregulares.",
+          "emotion": "conspiring",
+          "symbolism": "Planificación coordinada"
+        },
+        "Acuerdos burocraticos.png": {
+          "description": "Monstruo con templo gubernamental (ojos abiertos) haciendo trato con otro monstruo (ojos con X) sobre pila de documentos. Representa acuerdos entre entidades públicas y actores irregulares.",
+          "emotion": "conspiring",
+          "symbolism": "Acuerdos opacos"
+        },
+        "Conspiracion.png": {
+          "description": "Tres monstruos reunidos alrededor de documentos y planos. Expressión conspirativa. Representa redes de corrupción multi-actor.",
+          "emotion": "conspiring",
+          "symbolism": "Red de corrupción"
+        },
+        "Red de Corrupcion.png": {
+          "description": "Tres monstruos con tentáculos interconectados a un edificio gubernamental central. Líneas de conexión visibles. Representa la red de corrupción institucionalizada.",
+          "emotion": "conspiring",
+          "symbolism": "Corrupción institucionalizada"
+        },
+        "Don Tentaculos.png": {
+          "description": "Monstruo con múltiples tentáculos extendidos emergiendo del agua. Ojos con X. Representa la influencia y alcance extendido de esquemas corruptos.",
+          "emotion": "conspiring",
+          "symbolism": "Influencia extendida"
+        }
+      }
+    }
+  },
+  "notes": {
+    "symbolism_legend": {
+      "harpoon": "Arpón de ARPÓN (color cian/teal #2EC4B6) - representa la herramienta de detección",
+      "closed_eyes": "Ojos en forma de X - representa inconsciencia o derrota",
+      "corruption_fragments": "Fragmentos dispersos - representa evidencia de corrupción expuesta"
+    },
+    "usage": "Cada monstruo puede aparecer en distintas combinaciones de emociones y acciones para reflejar la diversidad de irregularidades detectadas."
+  }
+}
