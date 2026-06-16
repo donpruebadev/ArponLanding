@@ -29,10 +29,10 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="py-40 bg-arpon-surface-1" id="proceso">
+    <section className="py-52 bg-arpon-surface-1" id="proceso">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="max-w-2xl mb-24">
+        <div className="max-w-2xl mb-28">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}

@@ -55,9 +55,9 @@ const MONSTERS = [
 
 export function Monsters() {
   return (
-    <section className="py-40 bg-arpon-surface-0" id="monstruos">
+    <section className="py-52 bg-arpon-surface-0" id="monstruos">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-2xl mb-24">
+        <div className="max-w-2xl mb-28">
           <span
             className="data-label text-arpon-teal"
             style={{ fontFamily: "var(--font-mono)" }}
