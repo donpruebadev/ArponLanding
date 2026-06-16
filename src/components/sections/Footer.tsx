@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="py-48 bg-arpon-surface-3 border-t border-arpon-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 xl:px-28">
         <div className="grid md:grid-cols-4 gap-16">
           {/* Brand */}
           <div className="md:col-span-1">

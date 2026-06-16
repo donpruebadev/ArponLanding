@@ -30,7 +30,7 @@ const STEPS = [
 export function Process() {
   return (
     <section className="py-32 lg:py-40 bg-arpon-surface-3" id="proceso">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 xl:px-28">
         {/* Section header */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span

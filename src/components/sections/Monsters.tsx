@@ -56,7 +56,7 @@ const MONSTERS = [
 export function Monsters() {
   return (
     <section className="py-32 lg:py-40 bg-white" id="monstruos">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 xl:px-28">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span
             className="data-label text-arpon-teal"
