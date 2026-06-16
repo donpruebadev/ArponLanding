@@ -20,37 +20,15 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 bg-arpon-teal rounded-[6px] flex items-center justify-center shadow-[0_0_12px_rgba(46,196,182,0.25)]">
-            <svg
-              viewBox="0 0 32 32"
-              fill="none"
-              className="w-6 h-6 text-white"
-              aria-hidden="true"
-            >
-              {/* Arpón symbol */}
-              <path
-                d="M16 4L16 22"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-              <path
-                d="M16 22L8 14"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M16 22L24 14"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-              <circle cx="16" cy="26" r="2.5" fill="currentColor" />
-            </svg>
-          </div>
+          <img
+            src="/logo/arpon-logo.webp"
+            alt="ARpón"
+            className="h-10 w-auto object-contain"
+            loading="eager"
+            decoding="sync"
+          />
           <span
-            className="text-[22px] tracking-[-0.02em] text-arpon-text-primary"
+            className="text-[22px] tracking-[-0.02em] text-arpon-text-primary hidden sm:inline"
             style={{ fontFamily: "var(--font-akrobat)", fontWeight: 800 }}
           >
             ARPÓN

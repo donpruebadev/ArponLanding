@@ -6,34 +6,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="#inicio" className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-arpon-teal rounded-[6px] flex items-center justify-center">
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  className="w-6 h-6 text-white"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M16 4L16 22"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M16 22L8 14"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M16 22L24 14"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="16" cy="26" r="2.5" fill="currentColor" />
-                </svg>
-              </div>
+              <img
+                src="/logo/arpon-logo.webp"
+                alt="ARpón"
+                className="h-9 w-auto object-contain"
+              />
               <span
                 className="text-xl tracking-tight text-arpon-text-primary"
                 style={{ fontFamily: "var(--font-akrobat)", fontWeight: 800 }}
