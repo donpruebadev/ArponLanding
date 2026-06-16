@@ -29,7 +29,7 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="py-52 bg-arpon-surface-1" id="proceso">
+    <section className="py-52 bg-arpon-surface-3" id="proceso">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-2xl mb-28">
@@ -67,7 +67,7 @@ export function Process() {
                 <div className="hidden md:block absolute top-14 left-full w-full h-px bg-arpon-border z-0" />
               )}
 
-              <div className="relative p-10 rounded-[12px] border border-arpon-border bg-arpon-deep hover:border-arpon-teal/30 hover:shadow-[0_4px_16px_rgba(46,196,182,0.08)] transition-all duration-300">
+              <div className="relative p-10 rounded-[12px] border border-arpon-border bg-white hover:border-arpon-teal/30 hover:shadow-[0_4px_16px_rgba(46,196,182,0.08)] transition-all duration-300">
                 {/* Number */}
                 <span
                   className="data-label text-arpon-text-muted block mb-5"

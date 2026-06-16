@@ -36,7 +36,7 @@ const STATS = [
 
 export function Stats() {
   return (
-    <section className="py-52 bg-arpon-surface-1" id="estadisticas">
+    <section className="py-52 bg-arpon-surface-3" id="estadisticas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-2xl mb-28">
@@ -67,7 +67,7 @@ export function Stats() {
                 delay: i * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="p-8 rounded-[12px] border border-arpon-border bg-arpon-deep"
+              className="p-8 rounded-[12px] border border-arpon-border bg-white"
             >
               <div className="flex items-center gap-3 mb-5">
                 <stat.icon

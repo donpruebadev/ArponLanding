@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100dvh] flex items-center overflow-hidden bg-arpon-deep"
+      className="relative min-h-[100dvh] flex items-center overflow-hidden bg-white"
     >
       {/* Background gradient mesh (subtle) */}
       <div

@@ -16,7 +16,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-arpon-deep/95 backdrop-blur-sm border-b border-arpon-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-arpon-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 group">
@@ -84,7 +84,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="lg:hidden bg-arpon-surface-0 border-b border-arpon-border overflow-hidden"
+            className="lg:hidden bg-white border-b border-arpon-border overflow-hidden"
           >
             <div className="px-6 py-5 flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
