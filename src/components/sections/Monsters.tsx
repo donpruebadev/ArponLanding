@@ -55,7 +55,7 @@ const MONSTERS = [
 
 export function Monsters() {
   return (
-    <section className="py-80 bg-white" id="monstruos">
+    <section className="py-96 bg-white" id="monstruos">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-2xl mb-28">
           <span
