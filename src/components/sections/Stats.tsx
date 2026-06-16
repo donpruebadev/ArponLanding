@@ -36,7 +36,7 @@ const STATS = [
 
 export function Stats() {
   return (
-    <section className="py-52 bg-arpon-surface-3" id="estadisticas">
+    <section className="py-64 bg-arpon-surface-3" id="estadisticas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-2xl mb-28">
